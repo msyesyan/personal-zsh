@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/channing/.oh-my-zsh
@@ -86,5 +86,19 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias brewins="HOMEBREW_NO_AUTO_UPDATE=1 brew install"
+
+func setproxy() {
+  export http_proxy="127.0.0.1:8118"
+  export https_proxy="127.0.0.1:8118"
+}
+
+func unsetproxy() {
+  unset http_proxy
+  unset https_proxy
+}
+
+func copy() {
+  pbcopy < "$HOME/.secrets/$1"
+}
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh

@@ -192,8 +192,8 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  # prompt_segment blue black '%c'
-  prompt_segment blue black '%~'
+  prompt_segment blue black '%c'
+  # prompt_segment blue black '%~'
 }
 
 # Virtualenv: current working virtualenv
@@ -233,5 +233,6 @@ build_prompt() {
 
 # local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 # PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
-PROMPT='%{%f%b%k%}$(build_prompt)
-$(prompt_segment default white "☯") '
+# PROMPT='%{%f%b%k%}$(build_prompt)
+# $(prompt_segment default white "☯") '
+PROMPT='%{%f%b%k%}$(build_prompt) '

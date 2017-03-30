@@ -52,7 +52,8 @@ ZSH_THEME="msyesyan"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode autojump)
+# plugins=(git vi-mode autojump)
+plugins=(git autojump)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,6 +100,12 @@ func unsetproxy() {
 
 func copy() {
   pbcopy < "$HOME/.secrets/$1"
+}
+
+func thc() {
+  setproxy
+  trans -t zh $1 $2
+  unsetproxy
 }
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
